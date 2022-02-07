@@ -1,0 +1,59 @@
+FSL...init
++-------------------------------------------------------------------+
+| **** FSL ****                   FEMAG               Version 8.4.0 |
+| Script Language Interpreter                                       |
+| NOTE: For non commercial or evaluation use only.                  |
++-------------------------------------------------------------------+
+Start: Thu Jun 04 14:47:53 2020
+
+FSL...exe ".\M-Model-PM-0.fsl"
+New model "example", "PMSM"
+Global unit of length is 0.001 m
+Pick distance is 0.001
+Set coordinate system to polar
+Preprocessing CAD model basic_modpar
+Preprocessing CAD model STATOR_3
+Preprocessing CAD model Magnet-Sector
+Preprocessing CAD model connect_models
+Preprocessing CAD model Gen_winding
+Preprocessing CAD model CU-Losses-1
+Preprocessing CAD model Magnet-data
+
+WARNING: m.magsegwid differs largely from automatically identified width!
+
+WARNING: Properties of all permanent magnets have been modified.
+Preprocessing CAD model FE-Losses-1
+Preprocessing CAD model FE-Losses-2
+Set coordinate system to polar
+Preprocessing CAD model gen_pocfile
+Preprocessing CAD model FE-contr-data
+Run CAD model pm_sym_fastFSL...init
++-------------------------------------------------------------------+
+| **** FSL ****                   FEMAG               Version 8.4.0 |
+| Script Language Interpreter                                       |
+| NOTE: For non commercial or evaluation use only.                  |
++-------------------------------------------------------------------+
+Start: Mon Jun 15 12:25:20 2020
+
+FSL...exe ".\M-Model-PM-0.fsl"
+New model "example", "PMSM"
+Global unit of length is 0.001 m
+Pick distance is 0.001
+Set coordinate system to polar
+Preprocessing CAD model basic_modpar
+Preprocessing CAD model STATOR_3
+Preprocessing CAD model Magnet-Sector
+Preprocessing CAD model connect_models
+Preprocessing CAD model Gen_winding
+Preprocessing CAD model CU-Losses-1
+Preprocessing CAD model Magnet-data
+
+WARNING: m.magsegwid differs largely from automatically identified width!
+
+WARNING: Properties of all permanent magnets have been modified.
+Preprocessing CAD model FE-Losses-1
+Preprocessing CAD model FE-Losses-2
+Set coordinate system to polar
+Preprocessing CAD model gen_pocfile
+Preprocessing CAD model FE-contr-data
+Run CAD model pm_sym_fast

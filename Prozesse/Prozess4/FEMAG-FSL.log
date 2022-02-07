@@ -1,0 +1,16 @@
+FSL...init
++-------------------------------------------------------------------+
+| **** FSL ****                   FEMAG               Version 8.4.0 |
+| Script Language Interpreter                                       |
+| NOTE: For non commercial or evaluation use only.                  |
++-------------------------------------------------------------------+
+Start: Sat Sep 05 13:36:33 2020
+
+FSL...exe "M-Model-PM-4.fsl"
+New model "example", "PMSM"
+Global unit of length is 0.001 m
+Pick distance is 0.001
+Set coordinate system to polar
+Preprocessing CAD model basic_modpar
+Preprocessing CAD model STATOR_3
+Preprocessing CAD model Magnet-Sector

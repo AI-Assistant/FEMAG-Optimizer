@@ -1,0 +1,3 @@
+[console_scripts]
+code2pdf = Code2pdf:main
+

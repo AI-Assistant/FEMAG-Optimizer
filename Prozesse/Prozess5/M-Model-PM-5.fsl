@@ -1,0 +1,182 @@
+exit_on_error = false
+exit_on_end = true
+verbosity = 2
+new_model_force("example","PMSM")
+global_unit('mm')   
+pickdist(0.001)
+cosys('polar')
+m.tot_num_slot = 48
+m.num_slots = 12
+m.num_poles = 8
+m.npols_gen = 2
+m.fc_radius    = 251.0
+pre_models("basic_modpar")
+m.yoke_diam    = 604.0
+m.inside_diam  = 504.0
+m.slot_height  = 30.0
+m.slot_h1      = 1.2
+m.slot_h2      = 3.84
+m.slot_width   = 1.0
+m.slot_r1      = 0.0
+m.slot_r2      = 0.0
+m.wedge_width1 = 0.0
+m.wedge_width2 = 0.0
+m.nodedist     = 3.0
+m.middle_line = 0.000
+m.tooth_width  = 10.0
+m.slot_top_sh = 0.000
+m.airgap = 1.330
+m.tot_num_sl = m.tot_num_slot
+m.num_sl_gen = m.num_slots
+m.zeroangl = 0.000
+m.rlength = 100.000
+m.mcvkey_yoke = 'dummy'
+pre_models("STATOR_3")
+m.num_poles = 8
+m.npols_gen = 2
+m.magn_rad     = 250.0
+m.yoke_rad     = 120
+m.magn_height  = 110.0
+m.magn_width   = 85
+m.nodedist     = 3.0
+m.condshaft_r  = 120
+m.magn_num = 1.000
+m.magn_perm    = 140.0
+m.magn_l = 100.000
+m.magn_ori = 1.000
+m.magn_type = 2.000
+m.magn_shape = 0.000
+m.br_height = 0.000
+m.br_width = 0.000
+m.zeroangl = 0.000
+m.cond_shaft = 120.000
+m.mcvkey_yoke = 'dummy'
+m.mcvkey_mshaft = 'dummy'
+pre_models("Magnet-Sector")
+pre_models("connect_models")
+m.num_phases = 3.000
+m.num_layers = 1.000
+m.num_wires = 2.000
+m.current = 644
+m.coil_span = 6.000
+m.mat_type = 1.000
+m.wind_type = 1.000
+m.win_asym = 1.000
+m.wdg_location = 1.000
+m.curr_inp = 0.000
+m.dq_offset = 0.000
+m.npols_gen = 2.000
+m.xcoil_1 = 0.000
+m.ycoil_1 = 0.000
+m.xcoil_2 = 0.000
+m.ycoil_2 = 0.000
+pre_models("Gen_winding")
+m.cufilfact = 0.450
+m.culength = 160.000
+m.cuconduct = 56000000.000
+m.numlayers = 1.000
+m.conheight = 0.000
+m.contemp = 20.000
+m.emodul = 0.210E12
+m.poison = 0.300
+m.dampfact = 0.000
+m.thcond = 30.000
+m.thcap = 480.000
+m.slot_indul = 1.000
+m.dia_wire = 0.000
+m.num_wire = 0.000
+pre_models("CU-Losses-1")
+m.remanenc = 1.260
+m.relperm = 1.050
+m.spmaweight = 7.600
+m.temcoefbr = -0.100
+m.temcoefhc = -0.100
+m.magntemp = 20.000
+m.magncond = -10.0
+m.magsegwid = 126.465
+m.magseglen = 1
+pre_models("Magnet-data")
+m.basfreq = 200
+m.basind = 1.50
+m.ch = 13
+m.cw = 3.57
+m.hyscoef = 1.00
+m.edycoef = 1.45
+m.indcoef = 2.00
+m.ffactor = 1.00
+m.spweight = 7.65
+m.fillfact = 1.00
+m.emodul = 0.210E+12
+m.poison = 0.300
+m.dampfact = 0.00
+m.thcond = 30.00
+m.thcap = 480.00
+pre_models("FE-Losses-1")
+pre_models("FE-Losses-2")
+cosys('polar')
+pre_models("gen_pocfile")
+m.hc_min = 95.000
+m.con_hdcopy = -1.000
+m.b_max = 2.400
+m.b_min = 0.000
+m.calc_fe_loss = 1.000
+m.eval_force = 0.000
+m.allow_draw = 1
+m.fline_dens = 5.000
+m.num_flines = 20.000
+m.name_bch_log = 0.000
+m.st_size_move = 0.000
+m.num_nonl_it = 3.000
+m.perm_mode = 0.000
+m.error_perm = 0.010
+m.allow_demagn = 0.000
+m.maenergy = 0.000
+m.el_order_ag = 1.000
+m.export_scrpt = 0.000
+pre_models("FE-contr-data")
+m.move_action = 0.000
+m.arm_length   = 50.0
+m.num_pol_pair = m.num_poles/2
+m.speed = 3000
+m.skew_angle = 0.000
+m.nu_skew_steps = 0.000
+m.eval_force = 0.000
+m.current = 644
+m.angl_i_up = 0.000
+m.num_par_wdgs = 1.000
+m.magn_temp = 130.00
+m.optim_i_up = 0.000
+m.nu_move_steps = 91.0
+m.range_phi = 90.0
+m.phi_start = 0.000
+m.pm_eff_aktiv = 100.0
+m.fc_mult_move_type = 0.0
+m.pocfilename = 'example_8p.poc'
+m.v_limit = 565
+run_models("pm_sym_fast")
+post_models("r_torque","T")
+printf("> Drehmoment:    %g Nm",T[1])
+printf("> Nutrastmoment: %g Nm",T[2])
+printf("> Lastpulsation: %g Nm",T[3])
+post_models("r_winding_losses","Wv")
+printf("> Wicklungsverluste: %g W",Wv[1])
+post_models("r_iron_losses","Ev")
+printf("> Eisenverluste im Stator: %g W",Ev[1])
+printf("> Eisenverluste im Rotor:  %g W",Ev[2])
+post_models("r_load_voltage","R")
+printf("> Load_voltage : %g W",R[1])
+printf("> Noload_voltage:  %g W",R[2])
+post_models("r_current","i")
+current = i[1]
+post_models("r_cosphi","c")
+cos_phi = c[1]
+t = T[1]
+r = R[1]
+ev = Ev[1]+Ev[2]
+wv = Wv[1]
+outputfile = io.open("output-5.txt","w+")
+outputfile:write(string.format("%9.6f %9.6f %9.6f %9.6f %9.6f %2.2f",t,r,ev,wv,current,cos_phi));
+io.close(outputfile)
+save_model('close')
+
+
